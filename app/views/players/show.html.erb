@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @player.name %>
+</p>
+
+<p>
+  <strong>Pos:</strong>
+  <%= @player.pos %>
+</p>
+
+<p>
+  <strong>Ht:</strong>
+  <%= @player.ht %>
+</p>
+
+<p>
+  <strong>Wt:</strong>
+  <%= @player.wt %>
+</p>
+
+<p>
+  <strong>Hometown:</strong>
+  <%= @player.hometown %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @player.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @player.longitude %>
+</p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @player.team_id %>
+</p>
+
+<%= link_to 'Edit', edit_player_path(@player) %> |
+<%= link_to 'Back', players_path %>

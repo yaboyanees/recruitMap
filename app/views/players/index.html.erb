@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<%= form_tag import_players_path, multipart: true do %>
+	<%= file_field_tag :file %>
+	<%= submit_tag "Upload" %>
+<% end %>
+
+<br />
+
+<%= link_to 'Reset All', kill_players_url, :method => :delete %><br />
+
+<% @players.each do |p| %>
+	<%= p.id %> | <%= p.name %> | <%= p.hometown %> | <%= p.latitude %> | <%= p.longitude %> | <%= p.team_id %><br />
+<% end %>

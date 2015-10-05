@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<%= form_tag import_teams_path, multipart: true do %>
+	<%= file_field_tag :file %>
+	<%= submit_tag "Upload" %>
+<% end %>
+
+<br />
+
+<%= link_to 'Reset All', kill_teams_url, :method => :delete %><br />
+
+<% @teams.each do |t| %>
+	<%= t.id %> | <%= t.name %><br />
+<% end %>
