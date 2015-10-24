@@ -20,15 +20,11 @@ ActiveRecord::Schema.define(version: 20151004231646) do
     t.string   "name"
     t.string   "pos"
     t.string   "hometown"
+    t.string   "city"
+    t.string   "state"
     t.float    "latitude"
     t.float    "longitude"
-    t.integer  "team_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "teams", force: :cascade do |t|
-    t.string   "name"
+    t.string   "team"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,2 @@
+module HometownHelper
+end

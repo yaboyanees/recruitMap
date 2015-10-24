@@ -1,6 +1,5 @@
+require 'csv'
 class Player < ActiveRecord::Base
-
-	belongs_to :team
 	
 	def self.import(file)
 	  CSV.foreach(file.path, headers: true) do |row|

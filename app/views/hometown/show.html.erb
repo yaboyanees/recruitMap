@@ -1,10 +1,10 @@
 <div id="roster">
-	<h1><%= params[:id] %></h1>
+	<h1>Players from <%= params[:id] %></h1>
 	<table cellspacing='0'> 
 		<thead>
 			<tr>
 				<th>Player Name</th>
-				<th>Hometown</th>
+				<th>Position</th>
 				<th>Team</th>
 			</tr>
 		</thead>
@@ -12,7 +12,7 @@
 			<% @players.each do |p| %>
 			<tr>
 				<td><%= p.name %></td>
-				<td><%= p.hometown %></td>
+				<td><%= p.pos %></td>
 				<td><%= p.team %></td>
 			</tr>
 			<% end %>

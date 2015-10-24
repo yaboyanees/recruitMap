@@ -1,12 +1,6 @@
 class PlayersController < ApplicationController
-  before_action :set_player, only: [:show, :edit, :update, :destroy]
-
-
   def index
-    @players = Player.all
-  end
-
-  def show
+    @players = Player.count
   end
 
   def import
@@ -17,8 +11,13 @@ class PlayersController < ApplicationController
     end
   end
   
+  def show
+  	@pos = Player.select("pos", "name", "hometown", "team")
+	@players = @pos.where("pos = ?", params[:id])
+  end
+  
   def create
-    @player = Player.new(player_params)
+    @players = @player.count
   end
 
   def kill
@@ -33,13 +32,9 @@ class PlayersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_player
-      @player = Player.find(params[:id])
-    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def player_params
-      params.require(:player).permit(:name, :pos, :hometown, :latitude, :longitude, :team_id)
+      params.require(:player).permit(:name, :pos, :hometown, :city, :state, :latitude, :longitude, :team)
     end
 end

@@ -4,16 +4,16 @@
 		<thead>
 			<tr>
 				<th>Player Name</th>
+				<th>Position</th>
 				<th>Hometown</th>
-				<th>Team</th>
 			</tr>
 		</thead>
 		<tbody>
-			<% @players.each do |p| %>
+			<% @playerList.each do |t| %>
 			<tr>
-				<td><%= p.name %></td>
-				<td><%= p.hometown %></td>
-				<td><%= p.team %></td>
+				<td><%= t.name %></td>
+				<td><%= t.pos %></td>
+				<td><%= t.hometown %></td>
 			</tr>
 			<% end %>
 		</tbody>

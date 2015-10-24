@@ -4,11 +4,11 @@
 	<%= file_field_tag :file %>
 	<%= submit_tag "Upload" %>
 <% end %>
-
 <br />
 
-<%= link_to 'Reset All', kill_players_url, :method => :delete %><br />
-
-<% @players.each do |p| %>
-	<%= p.id %> | <%= p.name %> | <%= p.hometown %> | <%= p.latitude %> | <%= p.longitude %> | <%= p.team_id %><br />
+<% if @players == 0 %>
+	Please upload CSV file
+<% else %>
+	Records imported: <%= @players %><br /><br />
+	<%= link_to 'Reset All', kill_players_url, :method => :delete %>
 <% end %>

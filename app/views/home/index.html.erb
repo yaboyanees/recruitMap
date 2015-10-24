@@ -1,0 +1,21 @@
+<h1>Recruit Map</h1>
+
+<h2>Positions</h2>
+<% @pos.each do |p| %>
+	<%= link_to p, player_path(:id => p) %> |
+<% end %>
+
+<h2>Teams</h2>
+<% @teams.each do |t| %>
+	<%= link_to t, home_path(:id => t) %> |
+<% end %>
+
+<h2>Player Home State</h2>
+<% @homeState.each do |h| %>
+	<%= link_to h[0], hometown_index_path(:id => h[0]) %>(<%= h[1] %>) | 
+<% end %><br />
+
+<h2>Player Home City</h2>
+<% @homeCity.each do |h| %>
+	<%= link_to h[0], hometown_path(:id => h[0]) %>(<%= h[1] %>) | 
+<% end %><br />
