@@ -19,3 +19,6 @@
 <% @homeCity.each do |h| %>
 	<%= link_to h[0], hometown_path(:id => h[0]) %>(<%= h[1] %>) | 
 <% end %><br />
+
+<%= render partial: 'mapScript' %>
+<div id="container"></div>
